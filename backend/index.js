@@ -6,7 +6,7 @@ const port = 5000
 
 app.use(express.json()) //necessary when we use req.body in router files
 app.use('/api/auth',require('./routes/auth'))
-app.use('/api/notes',require('./routes/notes'))
+app.use('/api/note',require('./routes/note'))
 
 
 
