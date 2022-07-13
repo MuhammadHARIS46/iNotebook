@@ -1,6 +1,10 @@
 import React from "react";
+import Notes from "./Notes";
+
+
 
 const Home = () => {
+ 
   return (
     <div>
       <div classNameName="container my-3">
@@ -43,9 +47,7 @@ const Home = () => {
           </button>
         </form>
       </div>
-      <div classNameName="container my-3">
-        <h2>your Notes</h2>
-      </div>
+      <Notes />
     </div>
   );
 };
