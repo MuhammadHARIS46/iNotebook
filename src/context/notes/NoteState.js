@@ -4,7 +4,7 @@ const NoteState = (props) => {
   const notesInitial=[
     
       {
-        "_id": "62cf15d9ab833b8317d53aa9",
+        "_id": "62cf15d9a33b833b8317d53aa9",
         "user": "62bf39ca616869ba9e8b862a",
         "title": "aye dil ha mushkil",
         "description": "mujhko satati ha teri kami ",
@@ -13,7 +13,7 @@ const NoteState = (props) => {
         "__v": 0
       },
       {
-        "_id": "62cf16d7ab833b8317d53aad",
+        "_id": "62cf16d7ab833b855317d53aad",
         "user": "62bf39ca616869ba9e8b862a",
         "title": "aye dil ha mushkil",
         "description": "mujhko satati ha teri kami ",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
         "__v": 0
       },
       {
-        "_id": "62cf16d8ab833b8317d53aaf",
+        "_id": "62cf16d8ab83356b8317d53aaf",
         "user": "62bf39ca616869ba9e8b862a",
         "title": "aye dil ha mushkil",
         "description": "mujhko satati ha teri kami ",
