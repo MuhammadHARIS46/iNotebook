@@ -1,44 +1,108 @@
 import NoteContext from "./noteContext";
 import { useState } from "react";
-const NoteState = (props) => {
-  const notesInitial=[
-    
-      {
-        "_id": "62cf15d9a33b833b8317d53aa9",
-        "user": "62bf39ca616869ba9e8b862a",
-        "title": "aye dil ha mushkil",
-        "description": "mujhko satati ha teri kami ",
-        "tag": "my first note",
-        "date": "2022-07-13T18:58:33.114Z",
-        "__v": 0
-      },
-      {
-        "_id": "62cf16d7ab833b855317d53aad",
-        "user": "62bf39ca616869ba9e8b862a",
-        "title": "aye dil ha mushkil",
-        "description": "mujhko satati ha teri kami ",
-        "tag": "my first note",
-        "date": "2022-07-13T19:02:47.296Z",
-        "__v": 0
-      },
-      {
-        "_id": "62cf16d8ab83356b8317d53aaf",
-        "user": "62bf39ca616869ba9e8b862a",
-        "title": "aye dil ha mushkil",
-        "description": "mujhko satati ha teri kami ",
-        "tag": "my first note",
-        "date": "2022-07-13T19:02:48.232Z",
-        "__v": 0
-      }
-   
-  ]
-  const [notes, setNotes] = useState(notesInitial);
 
- 
-  return (
-    <NoteContext.Provider value={{ notes,setNotes }}>
-      _{props.children}
-    </NoteContext.Provider>
-  );
-};
+const NoteState = (props)=>{
+    const notesInitial = [
+        {
+          "_id": "61322f195153781a8ca8d0e06",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.509Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f195531781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e081",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f19553781a8ca8d0e082",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f195537812a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "613222f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+        {
+          "_id": "61322f119553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        },
+      ]
+      const [notes, setNotes] = useState(notesInitial)
+
+
+      // Add a Note
+      const addNote = (title, description, tag)=>{
+        // TODO: API Call
+        console.log("Adding a new note")
+        const note = {
+          "_id": "61322f119553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a0664",
+          "title": title,
+          "description": description,
+          "tag": tag,
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        };
+        setNotes(notes.concat(note)) 
+      }
+
+      // Delete a Note
+      const deleteNote = (id)=>{
+        // TODO: API Call
+        console.log("Deleting the note with id" + id);
+        const newNotes = notes.filter((note)=>{return note._id!==id})
+        setNotes(newNotes)
+      }
+      // Edit a Note
+      const editNote = (id, title, description, tag)=>{
+
+      }
+    
+    return (
+        <NoteContext.Provider value={{notes, addNote,deleteNote, editNote }}>
+            {props.children}
+        </NoteContext.Provider>
+    )
+}
+
 export default NoteState;
